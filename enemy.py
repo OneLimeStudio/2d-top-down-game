@@ -1,6 +1,7 @@
 import pygame
 import random
 import math
+import os
 class Enemy:
     
     def __init__(self,x,y) :
@@ -15,7 +16,10 @@ class Enemy:
         #self.imp = pygame.image.load("/home/xd/projects/2dVampireSurvivor/char/"+char)
 
         #self.imp = pygame.transform.rotate(self.imp, 180)
-        self.imp = pygame.image.load("/home/xd/projects/2dVampireSurvivor/char/enemy.png")
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, 'enemy.png')
+        self.imp = pygame.image.load(filename)
+        
         self.imp = pygame.transform.scale(self.imp,(self.Size*3,self.Size*3))
         self.imp = pygame.transform.rotate(self.imp, 270)
 

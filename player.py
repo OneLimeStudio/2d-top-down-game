@@ -1,5 +1,6 @@
 import pygame
 import math
+import os
 
 class Player:
     
@@ -14,7 +15,9 @@ class Player:
         self.playerWidth =  100
         self.playerHeight = 100
         self.moveDistance  = 5
-        self.imp = pygame.image.load("/home/xd/projects/2dVampireSurvivor/player.png")
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, 'player.png')
+        self.imp = pygame.image.load(filename)
         self.imp = pygame.transform.scale(self.imp,(self.playerWidth,self.playerHeight))
         self.imp = pygame.transform.rotate(self.imp, 180)
 

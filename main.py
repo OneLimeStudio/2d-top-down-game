@@ -1,9 +1,10 @@
 import pygame
-import player
 import bullets
 import random 
 import enemy
 import math
+import player
+
 
 #CONSTANTS
 

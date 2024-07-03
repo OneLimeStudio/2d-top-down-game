@@ -10,17 +10,12 @@ class Bullet:
         
         self.color = (0,255,0)
         self.MouseX , self.MouseY = pygame.mouse.get_pos()
-        # if self.MouseX - self.x == 0:
-        #     self.MouseX  = 0.0001
-        # self.slope = (self.MouseY - self.y) / (self.MouseX - self.x)
-        # self.c = self.y - self.x * self.slope
-        # if(self.MouseX - self.x >= 0):
-        #     self.step = self.SPEED
-        # else:
-        #     self.step = -self.SPEED
+
         distanceX = ((self.x  )- self.MouseX)
         distanceY = ((self.y ) - self.MouseY)
+
         BulletSound = pygame.mixer.Sound("bullet.wav")
+        BulletSound.set_volume(0.4)
         self.angle =   math.atan2(distanceY,distanceX)
         pygame.mixer.Sound.play(BulletSound)
         pygame.mixer.music.stop()
