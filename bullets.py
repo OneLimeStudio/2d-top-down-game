@@ -1,5 +1,6 @@
 import pygame
 import math
+import os
 class Bullet:
     
     def __init__(self,x,y):
@@ -14,7 +15,12 @@ class Bullet:
         distanceX = ((self.x  )- self.MouseX)
         distanceY = ((self.y ) - self.MouseY)
 
-        BulletSound = pygame.mixer.Sound("bullet.wav")
+        
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, 'bullet.wav')
+        BulletSound = pygame.mixer.Sound(filename)
+
+        
         BulletSound.set_volume(0.4)
         self.angle =   math.atan2(distanceY,distanceX)
         pygame.mixer.Sound.play(BulletSound)
